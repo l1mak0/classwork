@@ -1,6 +1,6 @@
 <?php
 //
-//class Door
+// class Door
 //{
 //    public $color;
 //    public $material;
@@ -28,7 +28,6 @@
 //var_dump($myDoor);
 //$myDoor->material = 'Метал';
 //var_dump($myDoor);
-
 //class TrafficLight
 //{
 //    public $is_working;
@@ -76,7 +75,6 @@
 //var_dump($traffic_light);
 //$traffic_light->notWorking();
 //var_dump($traffic_light);
-
 //class Calc
 //{
 //    public $numberFirst;
@@ -114,22 +112,97 @@
 //$newCalc->op = '/';
 //$newCalc->result();
 //
+//class User
+//{
+//    private $firstName;
+//
+//    public function setFirstName($first_name)
+//    {
+//        $this->firstName = $first_name;
+//    }
+//
+//    public function getFirstName()
+//    {
+//        return $this->firstName;
+//    }
+//}
+//
+//$user = new User();
+//$user->setFirstName('ИВАН');
+//echo $user->getFirstName();
+//abstract class Messenger
+//{
+//    protected $name;
+//    public function __construct($name)
+//    {
+//        $this->name = $name;
+//
+//    }
+//    abstract function send($message);
+//    abstract function getName();
+//    public function close()
+//    {
+//        echo 'Выход из мессенджера';
+//    }
+//}
+//
+//class EmailMessenger extends Messenger
+//{
+//    public function send($message)
+//    {
+//        echo "{$this->name} отпровляет сообщение: {$message}<br>";
+//    }
+//
+//    public function getName()
+//    {
+//        echo $this->name.'<br>';
+//    }
+//}
+//
+//$outlook = new EmailMessenger("Outlook");
+//$outlook->send("Hello PHP");
+//$outlook->getName();
+//$outlook->close();
+//trait Printer
+//{
+//    public function printSimpleText($text)
+//    {
+//        echo "{$text}<br>";
+//    }
+//    public function printHeaderText($text)
+//    {
+//        echo "<h2>{$text}</h2><br>";
+//    }
+//}
+//class Message
+//{
+//    use Printer;
+//}
+//$myPrint =  new Message();
+//$myPrint->printSimpleText('Сообщение');
+//$myPrint->printHeaderText('Сообщение и заголовок');
 
-class User
-{
-    private $firstName;
+require './mp3Player.php';
 
-    public function setFirstName($first_name)
-    {
-        $this->firstName = $first_name;
-    }
+$mp3 = new mp3Player();
+$mp3->setId(5);
+echo $mp3->getId();
 
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-}
+$players = new mp3Player();
+$players->addMusic('Название песни № 1');
+$players->addMusic('Название песни № 2');
+$players->addMusic('Название песни № 3');
+$players->addMusic('Название песни № 4');
+$players->addMusic('Название песни № 5');
 
-$user = new User();
-$user->setFirstName('ИВАН');
-echo $user->getFirstName();
+$players->play();//Название песни № 1
+$players->SwitchUp();
+$players->play();//Название песни № 2
+$players->SwitchUp();
+$players->play();//Название песни № 3
+$players->SwitchUp();
+$players->play();//Название песни № 4
+$players->SwitchUp();
+$players->play();//Название песни № 5
+$players->SwitchUp();
+$players->play();//Название песни № 1
